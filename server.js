@@ -36,20 +36,31 @@ app.get('*', (req, res) =>
 // function to create new note
 function createNewNote(body, notesArray) {
     const newNote = body;
+
+    // Check if notesArray is an array. If not, initialize it as an empty array.
     if (!Array.isArray(notesArray))
         notesArray = [];
 
+    // If notesArray is empty, initialize the first element as 0.
     if (notesArray.length === 0)
         notesArray.push(0);
 
+    // Assign a unique id to the new note by using the value of the first element in notesArray.
     body.id = notesArray[0];
+
+    // Increment the first element in notesArray to ensure the next note gets a unique id.
     notesArray[0]++;
 
+    // Add the new note to the notesArray.
     notesArray.push(newNote);
+
+    // Write the updated notesArray to the db.json file.
     fs.writeFileSync(
         path.join(__dirname, './db/db.json'),
         JSON.stringify(notesArray, null, 2)
     );
+
+    // Return the new note.
     return newNote;
 };
 
@@ -61,16 +72,19 @@ app.post('/api/notes', (req, res) => {
 
 // function to delete notes, 
 function deleteNote(id, notesArray) {
-    for (let i = 0; i < notesArray.length; i++) {
+     // loops through to retrieve current note
+    for (let i = 0; i < notesArray.length; i++) {   
         let note = notesArray[i];
-
+        // Checks if the id of the current note matches the id passed to the function
+        // If a matching id is found, it remove the note by using splice(i, 1), removes one element at index i from the array
         if (note.id == id) {
             notesArray.splice(i, 1);
+            // Updates the database
             fs.writeFileSync(
                 path.join(__dirname, './db/db.json'),
                 JSON.stringify(notesArray, null, 2)
             );
-            break;
+            break; // Breaks the loop
         }
     }
 }
