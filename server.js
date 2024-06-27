@@ -30,7 +30,7 @@ app.get('/notes', (req, res) =>
 
 // Wildcard route to direct users index.html
 app.get('*', (req, res) =>
-    res.sendFile(path.join(__dirname, 'public/index.html'))
+    res.sendFile(path.join(__dirname, './public/index.html'))
 );
 
 // function to create new note
