@@ -89,11 +89,13 @@ function deleteNote(id, notesArray) {
     }
 }
 
+// API route to delete notes
 app.delete('/api/notes/:id', (req, res) => {
     deleteNote(req.params.id, dataBase);
     res.json(true);
 });
 
+// Listen for connections
 app.listen(PORT, () =>
     console.log(`App listening at http://localhost:${PORT}`)
 );
