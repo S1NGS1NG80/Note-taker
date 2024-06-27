@@ -13,7 +13,7 @@ Module 11 challenge where we have an app that can write, save and delete notes.
 - [Questions](#questions)
 
 ## Installation
-N/A
+https://note-taker-kqm3.onrender.com
 
 ## Usage
 Follow the App prompts from the homepage to the notes page.
@@ -24,6 +24,8 @@ Leveraged functions from https://github.com/kara-krzystan/note-taker.git
 
 ## Tests
 Screenshots below:
+![alt text](<Screenshot 2024-06-26 at 23.09.37.png>)\
+![alt text](<Screenshot 2024-06-26 at 23.09.26.png>)
 
 ## License
 ![badge](https://img.shields.io/badge/license-MIT-brightgreen)
