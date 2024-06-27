@@ -19,7 +19,7 @@ https://note-taker-kqm3.onrender.com
 Follow the App prompts from the homepage to the notes page.
 
 ## Contributing
-Sean Singer, https://github.com/S1NGS1NG80/Note-taker.git\
+Sean Singer, https://github.com/S1NGS1NG80/Note-taker.git \
 Leveraged functions from https://github.com/kara-krzystan/note-taker.git
 
 ## Tests
