@@ -34,19 +34,15 @@ app.get('*', (req, res) =>
 );
 
 // function to create new note
-function createNewNote(body, notesArray) {
-    const newNote = body;
-
-    // Check if notesArray is an array. If not, initialize it as an empty array.
-    if (!Array.isArray(notesArray))
-        notesArray = [];
+function createNewNote(body, notesArray = []) {
+    const newNote = { ...body };
 
     // If notesArray is empty, initialize the first element as 0.
     if (notesArray.length === 0)
         notesArray.push(0);
 
     // Assign a unique id to the new note by using the value of the first element in notesArray.
-    body.id = notesArray[0];
+    newNote.id = notesArray[0];
 
     // Increment the first element in notesArray to ensure the next note gets a unique id.
     notesArray[0]++;
